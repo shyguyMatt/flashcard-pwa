@@ -64,6 +64,7 @@ export default function Edit() {
         questions: tempQuestions,
         answers: tempAnswers
       })
+      window.location.replace('/')
     }
     catch(err) {
       console.error(err)
@@ -78,10 +79,10 @@ export default function Edit() {
   }
 
   return(
-    <div>
+    <div id='quiz-body'>
       <h1>{questions.name}</h1>
-      <button onClick={saveQuestions}>Save</button>
-      <button onClick={deleteQuiz}>Delete</button>
+      <button id='quiz-save' onClick={saveQuestions}>Save</button>
+      <button id='quiz-delete' onClick={deleteQuiz}>Delete</button>
       <div className='questions'>
         {fields.map((field, index) => {
           return(
@@ -89,7 +90,7 @@ export default function Edit() {
           )
         })}
       </div>
-      <button onClick={addField}>Add Question</button>
+      <button id='add-question' onClick={addField}>Add Question</button>
     </div>
   )
 }

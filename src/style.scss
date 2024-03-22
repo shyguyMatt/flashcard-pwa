@@ -94,10 +94,29 @@ code {
 .questions{
   display:flex;
   flex-direction: column;
+  width: 100%;
+  align-items: center;
 
   .question-card{
     display: flex;
     flex-direction: column;
+    width: 90%;
+
+    textarea{
+      width: 88vw;
+      height: 15dvh;
+    }
+
+    button{
+      width: 90vw;
+      height: 4dvh;
+      margin-bottom: 20px;
+      background-color: red;
+      border: none;
+      border-radius: 15px;
+      color: white;
+      font-size: 2dvh;
+    } 
   }
 }
 
@@ -145,6 +164,7 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 20px;
 
   .quiz-link{
     width: 90vw;
@@ -167,4 +187,49 @@ code {
     color: white;
     font-size: 5dvh;
   }
+  #quiz-save{
+    width: 90vw;
+    height: 8dvh;
+    margin-bottom: 20px;
+    background-color: #32c947;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 5dvh;
+  }
+
+  #quiz-delete{
+    width: 90vw;
+    height: 8dvh;
+    margin-bottom: 20px;
+    background-color: red;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 5dvh;
+  }
+
+  #add-question{
+    width: 90vw;
+    height: 8dvh;
+    margin-bottom: 20px;
+    background-color: #3e8ded;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 5dvh;
+  } 
+
+  label{
+    color: white;
+  }
+
+  input{
+    width: 90%;
+    margin-bottom: 20px;
+  }
 }
+
+
+
+
