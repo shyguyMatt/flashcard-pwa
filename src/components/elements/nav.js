@@ -30,6 +30,7 @@ export default function Nav() {
           {/* <Link onClick={slideNav} className="side-nav-link" to='/home'>Back Home</Link> */}
           <Link onClick={slideNav} className="side-nav-link" to='/edit'>Create/Edit</Link>
           <Link onClick={slideNav} className="side-nav-link" to ='/quiz_select'>Quiz Select</Link> 
+          <Link onClick={slideNav} className="side-nav-link" to='/signin'>Login/Signup</Link>
         </div>
    
       </div>

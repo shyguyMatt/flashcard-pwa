@@ -11,6 +11,7 @@ import QuizSelect from './components/pages/quizSelect';
 import Quiz from './components/pages/quiz';
 import Edit from './components/pages/edit';
 import Create from './components/pages/create';
+import SignIn from './components/auth/signin';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,13 +19,13 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App/>}>
-          {/* <Route path='/home' element={<Home/>}/> */}
           <Route index element={<QuizSelect/>}/>
           <Route path='/quiz_select' element={<QuizSelect/>}/>
           <Route path='/edit' element={<Editor/>}/>
           <Route path='/edit/*' element={<Edit/>}/>
           <Route path='/quiz/*' element={<Quiz/>}/>
           <Route path='/create' element={<Create/>}/>
+          <Route path='/signin' element={<SignIn/>}/>
           <Route 
             path="*"
             element={

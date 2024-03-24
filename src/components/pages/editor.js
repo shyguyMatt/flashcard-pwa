@@ -1,19 +1,21 @@
-import React, { useState, useEffect } from "react";
-import { collection, getDocs, query } from 'firebase/firestore';
-import { db } from './../../firebase'
+import React, { useState, useEffect, useContext } from "react";
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { auth, db } from './../../firebase'
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/authContext";
 
 export default function Editor() {
+  const { authUser } = useContext(AuthContext)
   const [ quizes, setQuizes ] = useState('loading')
 
   useEffect(() => {
     getQuizes()
-  }, [])
+  }, [authUser])
 
   const getQuizes = async() => {
     try {
-      const quizesRef = collection(db, 'quizes');
-      const q =  query(quizesRef);
+      if(authUser === null) return;
+      const q =  query(collection(db, 'quizes'), where('user', '==', authUser.uid));
       let results = await getDocs(q);
       let temp = [];
       results.forEach((doc) => {
@@ -23,6 +25,12 @@ export default function Editor() {
     } catch (err) {
       console.error(err);
     }
+  }
+
+  if (authUser === null) {
+    return(
+      <div>You must be signed in to view this page</div>
+    )
   }
 
   if(quizes === 'loading') {
