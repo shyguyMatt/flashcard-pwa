@@ -18,7 +18,8 @@ export default function Create() {
         name: tempName,
         user: authUser.uid
       })
-      window.location.replace(`/edit/${doc.id}`)
+      let link = `/edit/${doc.id}`
+      window.location.replace(link)
     }
     catch(err) {
       console.error(err)

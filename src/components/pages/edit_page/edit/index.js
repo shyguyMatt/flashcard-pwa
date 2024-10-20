@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { deleteDoc, doc, getDoc, query, updateDoc } from 'firebase/firestore';
-import { db } from './../../../firebase'
+import { db } from './../../../../firebase'
 import QuestionCard from './questionCard';
 
 export default function Edit() {

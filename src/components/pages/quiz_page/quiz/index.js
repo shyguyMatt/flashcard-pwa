@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { doc, getDoc, query } from 'firebase/firestore';
-import { db } from './../../../firebase'
+import { db } from './../../../../firebase'
 
-import CardContainer from './elements/cardContainer';
+import CardContainer from './cardContainer';
 
 export default function Quiz() {
   const [ questions, setQuestions ] = useState('loading')

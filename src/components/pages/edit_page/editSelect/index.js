@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import { collection, getDocs, query, where } from 'firebase/firestore';
-import { auth, db } from './../../firebase'
+import { db } from './../../../../firebase'
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../contexts/authContext";
+import { AuthContext } from "./../../../../contexts/authContext";
 
-export default function Editor() {
+export default function EditSelect() {
   const { authUser } = useContext(AuthContext)
   const [ quizes, setQuizes ] = useState('loading')
 

@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.scss';
 import App from './components/app';
-import Home from './components/pages/home';
 import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
-import Editor from './components/pages/editor';
-import QuizSelect from './components/pages/quizSelect';
-import Quiz from './components/pages/quiz';
-import Edit from './components/pages/edit';
-import Create from './components/pages/create';
-import SignIn from './components/auth/signin';
+import SignIn from './components/auth/signin'
+import QuizPage from './components/pages/quiz_page';
+import EditPage from './components/pages/edit_page';
+import Quiz from './components/pages/quiz_page/quiz';
+import QuizSelect from './components/pages/quiz_page/quizSelect';
+import EditSelect from './components/pages/edit_page/editSelect';
+import Edit from './components/pages/edit_page/edit';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,12 +20,15 @@ root.render(
       <Routes>
         <Route path='/' element={<App/>}>
           <Route index element={<QuizSelect/>}/>
-          <Route path='/quiz_select' element={<QuizSelect/>}/>
-          <Route path='/edit' element={<Editor/>}/>
-          <Route path='/edit/*' element={<Edit/>}/>
-          <Route path='/quiz/*' element={<Quiz/>}/>
-          <Route path='/create' element={<Create/>}/>
-          <Route path='/signin' element={<SignIn/>}/>
+          <Route path='signin' element={<SignIn/>}/>
+          <Route path='quiz' element={<QuizPage/>}>
+            <Route index element={<QuizSelect/>}/>
+            <Route path="*" element={<Quiz/>}/>
+          </Route>
+          <Route path='edit' element={<EditPage/>}>
+            <Route index element={<EditSelect/>}/>
+            <Route path="*" element={<Edit/>}/>
+          </Route>
           <Route 
             path="*"
             element={
